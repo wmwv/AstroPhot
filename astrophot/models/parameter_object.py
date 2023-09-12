@@ -17,7 +17,7 @@ __all__ = ["Parameter"]
 
 class Parameter(object):
     """Object for storing model parameters that are to be optimized in the
-    fitting procedure. A value and it's uncertainty are stored as well
+    fitting procedure. A value and its uncertainty are stored as well
     as meta information about the parameter. The meta information
     indicates if the parameter has any boundary values (upper or lower
     limits) and if the parameter has cyclic boundary conditions. The
@@ -26,7 +26,7 @@ class Parameter(object):
     change during normal fitting conditions.
 
     For the purpose of optimization, the parameter object also stores
-    a representation of it's value which is valid in the -inf to +inf
+    a representation of its value which is valid in the -inf to +inf
     range. This makes the parameter better behaved with most
     optimizers as they are free to explore the full real number
     line. Any time the value, or representation are updated, both
@@ -486,7 +486,7 @@ class Parameter(object):
         self.locked = state.get("locked", False)
 
     def __str__(self):
-        """String representation of the parameter which indicates it's value
+        """String representation of the parameter which indicates its value
         along with uncertainty, units, limits, etc.
 
         """
