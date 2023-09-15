@@ -355,7 +355,7 @@ class Parameter(object):
         identity: Optional[str] = None,
     ):
         """Set the value of the parameter. In fact this indirectly updates the
-        representation for the parameter accoutning for any limits or
+        representation for the parameter accounting for any limits or
         cyclic boundaries are applied for this parameter.
 
         """
