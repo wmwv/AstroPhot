@@ -329,10 +329,10 @@ class Image_Header(object):
         n_pixels = self.data_shape
         step_direction = np.sign(self.data_shape)
         xsteps = torch.arange(
-            n_pixels[1], step=step_direction[1], dtype=AP_config.ap_dtype, device=AP_config.ap_device
+            start=0, end=n_pixels[1], step=step_direction[1], dtype=AP_config.ap_dtype, device=AP_config.ap_device
         )
         ysteps = torch.arange(
-            n_pixels[0], step_step_direction[0], dtype=AP_config.ap_dtype, device=AP_config.ap_device
+            start=0, end=n_pixels[0], step=step_direction[0], dtype=AP_config.ap_dtype, device=AP_config.ap_device
         )
         meshx, meshy = torch.meshgrid(
             xsteps,
@@ -350,13 +350,13 @@ class Image_Header(object):
         step_direction = np.sign(self.data_shape)
         xsteps = (
             torch.arange(
-                n_pixels[1] + 1, step=step_direction[1], dtype=AP_config.ap_dtype, device=AP_config.ap_device
+                start=0, end=n_pixels[1] + 1, step=step_direction[1], dtype=AP_config.ap_dtype, device=AP_config.ap_device
             )
             - 0.5
         )
         ysteps = (
             torch.arange(
-                n_pixels[0] + 1, step=step_direction[0], dtype=AP_config.ap_dtype, device=AP_config.ap_device
+                start=0, end=n_pixels[0] + 1, step=step_direction[0], dtype=AP_config.ap_dtype, device=AP_config.ap_device
             )
             - 0.5
         )
@@ -377,7 +377,8 @@ class Image_Header(object):
         xsteps = (
             0.5
             * torch.arange(
-                2 * (n_pixels[1]) + 1,
+                start=0,
+                end=2 * (n_pixels[1]) + 1,
                 step=step_direction[1],
                 dtype=AP_config.ap_dtype,
                 device=AP_config.ap_device,
@@ -387,7 +388,8 @@ class Image_Header(object):
         ysteps = (
             0.5
             * torch.arange(
-                2 * (n_pixels[0]) + 1,
+                start=0,
+                end=2 * (n_pixels[0]) + 1,
                 step=step_direction[0],
                 dtype=AP_config.ap_dtype,
                 device=AP_config.ap_device,
