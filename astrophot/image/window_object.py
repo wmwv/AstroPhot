@@ -112,7 +112,7 @@ class Window(object):
 
     def world_to_cartesian(self, world_coordinate):
         """Projects a world coordinate which may be rotated, flipped, or
-        sheered into a regular square cartesian grid for the purpose
+        sheared into a regular square cartesian grid for the purpose
         of comparisons and where arithmetic is more straightforward.
 
         """
